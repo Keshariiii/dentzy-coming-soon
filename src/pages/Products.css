@@ -1,0 +1,148 @@
+/* Products.css */
+.products-page {
+    padding-top: 80px;
+    /* Navbar compensation */
+    min-height: 100vh;
+    background-color: #E2E8F0;
+    /* Matching global soft gray/white theme */
+}
+
+/* Header if needed, but prompted design just list sections. 
+   Maybe a small header spacing or title. 
+   User PROMPT says "Header: Clean navigation bar". Body Content: Z-Pattern. 
+   Doesn't explicitly ask for a page title like "Our Products", but good practice.
+*/
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    /* Generous white space */
+}
+
+.product-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    opacity: 0;
+    /* For animation */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Z-Pattern Logic handled in JSX or nth-child */
+.product-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.product-image-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+    height: 350px;
+    /* Consistent height */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+/* Lightbox Hover Effect (Zoom) */
+.product-image:hover {
+    transform: scale(1.1);
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-title {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    /* Dark slate */
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.product-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+    /* Slate 600 */
+}
+
+.product-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.products-footer {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--white);
+    margin-top: 60px;
+}
+
+.products-footer p {
+    font-size: 1.2rem;
+    color: #64748B;
+    font-weight: 500;
+}
+
+/* Animations */
+.product-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.product-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.product-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.product-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.product-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.product-section:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 900px) {
+    .product-section {
+        flex-direction: column !important;
+        /* Always column on mobile */
+        gap: 30px;
+        text-align: left;
+    }
+
+    .product-image-wrapper {
+        width: 100%;
+        height: 250px;
+        order: -1;
+        /* Image always top */
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+}

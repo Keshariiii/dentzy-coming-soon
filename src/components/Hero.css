@@ -1,0 +1,243 @@
+/* Hero.css */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align left as per screenshot */
+    background: transparent;
+    color: var(--white);
+    text-align: left;
+    /* Left align text */
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    display: none;
+    /* No overlay needed on dark bg */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    /* Flex to split content left and visual right */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text-side {
+    max-width: 600px;
+}
+
+.hero-overline {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    /* Big like "Hide & Seek" */
+    font-weight: 400;
+    /* Regular weight */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    font-family: var(--font-family);
+    /* Monospace/typewriter vibe? */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: var(--text-muted);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    /* Left align actions */
+}
+
+/* Typographic Stack Visual */
+.hero-visual-side {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typo-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align right side */
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 0.85;
+    text-transform: uppercase;
+    color: #333;
+    /* Darker base */
+}
+
+.typo-line {
+    transition: all 0.5s ease;
+    cursor: default;
+    white-space: nowrap;
+}
+
+/* Simulate the wave/cylinder effect */
+.layer-1 {
+    transform: perspective(600px) rotateY(20deg) translateX(-20px);
+    color: #222;
+    opacity: 0.5;
+}
+
+.layer-2 {
+    transform: perspective(600px) rotateY(10deg) translateX(-10px);
+    color: #444;
+    opacity: 0.7;
+    font-size: 5.5rem;
+}
+
+.layer-3 {
+    transform: perspective(600px) rotateY(0deg);
+    color: #FFFFFF;
+    font-size: 6rem;
+    z-index: 10;
+}
+
+.layer-4 {
+    transform: perspective(600px) rotateY(-10deg) translateX(-10px);
+    color: #444;
+    opacity: 0.7;
+    font-size: 5.5rem;
+}
+
+.layer-5 {
+    transform: perspective(600px) rotateY(-20deg) translateX(-20px);
+    color: #222;
+    opacity: 0.5;
+}
+
+.typo-line:hover {
+    color: #fff;
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding-top: 0;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        /* Ensure full viewport height */
+        overflow: hidden;
+        /* Prevent scrolling if scale goes out */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        /* Space between text and visual */
+    }
+
+    .hero-text-side {
+        max-width: 100%;
+        margin-bottom: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        /* Smaller for mobile */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 300px;
+        /* constrain width for readability */
+        margin: 0 auto;
+    }
+
+    .hero-visual-side {
+        display: flex;
+        /* Show it! */
+        width: 300px;
+        height: 300px;
+        transform: scale(0.7);
+        /* Scale down for mobile */
+        margin-top: -20px;
+        justify-content: center;
+    }
+
+    .typo-stack {
+        align-items: center;
+        /* Center stack on mobile */
+    }
+
+    /* Adjust visual perspective for smaller screens */
+    .typo-line {
+        font-size: 4rem;
+    }
+
+    .layer-2,
+    .layer-4 {
+        font-size: 4.5rem;
+    }
+
+    .layer-3 {
+        font-size: 5rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-visual-side {
+        transform: scale(0.55);
+        /* Further scale down for very small phones */
+        margin-top: -40px;
+    }
+}
