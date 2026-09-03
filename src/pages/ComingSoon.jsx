@@ -1,9 +1,9 @@
 import React from 'react';
-import '../components/Hero.css'; // Reusing the styled Hero CSS
+import './ComingSoon.css';
 
 const ComingSoon = () => {
     return (
-        <section className="hero" style={{ height: '100vh', width: '100vw', background: 'var(--bg-gradient)', paddingTop: 0 }}>
+        <section className="hero" style={{ minHeight: '100vh', width: '100%', background: 'var(--bg-gradient)', paddingTop: 0 }}>
             <div className="container hero-content">
                 <div className="hero-text-side">
                     <p className="hero-overline animate-on-scroll">DENTZY</p>

@@ -1,23 +1,14 @@
-/* Hero.css */
+/* ComingSoon.css */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* Align left as per screenshot */
     background: transparent;
     color: var(--white);
     text-align: left;
-    /* Left align text */
-    padding-top: 80px;
     overflow: hidden;
-}
-
-.hero-overlay {
-    display: none;
-    /* No overlay needed on dark bg */
 }
 
 .hero-content {
@@ -27,7 +18,6 @@
     margin: 0 auto;
     width: 100%;
     display: flex;
-    /* Flex to split content left and visual right */
     justify-content: space-between;
     align-items: center;
 }
@@ -49,9 +39,7 @@
 .hero-title {
     font-family: var(--font-display);
     font-size: 5rem;
-    /* Big like "Hide & Seek" */
     font-weight: 400;
-    /* Regular weight */
     line-height: 1.1;
     margin-bottom: 2rem;
     color: var(--white);
@@ -59,18 +47,10 @@
 
 .hero-subtitle {
     font-family: var(--font-family);
-    /* Monospace/typewriter vibe? */
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 3rem;
     color: var(--text-muted);
-}
-
-.hero-actions {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    /* Left align actions */
 }
 
 /* Typographic Stack Visual */
@@ -87,14 +67,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* Align right side */
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 5rem;
     line-height: 0.85;
     text-transform: uppercase;
     color: #333;
-    /* Darker base */
 }
 
 .typo-line {
@@ -103,7 +81,7 @@
     white-space: nowrap;
 }
 
-/* Simulate the wave/cylinder effect */
+/* Wave/cylinder 3D perspective effect */
 .layer-1 {
     transform: perspective(600px) rotateY(20deg) translateX(-20px);
     color: #222;
@@ -155,13 +133,10 @@
 
 @media screen and (max-width: 768px) {
     .hero {
-        padding-top: 0;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        /* Ensure full viewport height */
+        min-height: 100vh;
         overflow: hidden;
-        /* Prevent scrolling if scale goes out */
     }
 
     .hero-content {
@@ -170,7 +145,6 @@
         align-items: center;
         text-align: center;
         gap: 40px;
-        /* Space between text and visual */
     }
 
     .hero-text-side {
@@ -184,34 +158,28 @@
 
     .hero-title {
         font-size: 3rem;
-        /* Smaller for mobile */
         margin-bottom: 1.5rem;
     }
 
     .hero-subtitle {
         font-size: 1rem;
-        max-width: 300px;
-        /* constrain width for readability */
+        max-width: 320px;
         margin: 0 auto;
     }
 
     .hero-visual-side {
         display: flex;
-        /* Show it! */
         width: 300px;
         height: 300px;
         transform: scale(0.7);
-        /* Scale down for mobile */
         margin-top: -20px;
         justify-content: center;
     }
 
     .typo-stack {
         align-items: center;
-        /* Center stack on mobile */
     }
 
-    /* Adjust visual perspective for smaller screens */
     .typo-line {
         font-size: 4rem;
     }
@@ -224,10 +192,6 @@
     .layer-3 {
         font-size: 5rem;
     }
-
-    .hero-actions {
-        justify-content: center;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -237,7 +201,6 @@
 
     .hero-visual-side {
         transform: scale(0.55);
-        /* Further scale down for very small phones */
         margin-top: -40px;
     }
 }

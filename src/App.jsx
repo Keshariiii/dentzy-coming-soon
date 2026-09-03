@@ -23,7 +23,7 @@ function App() {
     });
 
     return () => observer.disconnect();
-  });
+  }, []);
 
   return (
     <div className="App">
